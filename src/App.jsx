@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from './Components/NavBar'
-import { useLocation } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
+import Home from './Pages/Home';
 
 const App = () => {
 
@@ -8,6 +9,13 @@ const App = () => {
   return (
     <div>
       {!isOwnerPath && <NavBar />}
+
+      <div className='min-h-[70vh]'>
+        <Routes>
+          <Route path='/' element={<Home />} />
+        </Routes> 
+
+      </div>
     </div>
   )
 }
